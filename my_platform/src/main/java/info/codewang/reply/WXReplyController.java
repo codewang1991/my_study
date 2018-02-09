@@ -62,8 +62,16 @@ public class WXReplyController {
 		}
 		 
 	         message = textMessage.initMessage(FromUserName, ToUserName,sb.toString());  
+	    }else if("event".equals(MsgType)){
+		String event = map.get("Event");
+		if("subscribe".equals(event)){
+		    TextMessageUtil textMessage = new TextMessageUtil();
+		        String desc = "欢迎关注我的个人订阅号,你可以使用它识别一些图片上的文字！";
+		        message = textMessage.initMessage(FromUserName, ToUserName,desc);
+		}else if("unsubscribe".equals(event)){
+		    System.out.println(FromUserName+"已取消关注。。。。。。。。。。。。");
+		}
 	    }
-	    System.out.println(message);
 	    return message;
     }
     
