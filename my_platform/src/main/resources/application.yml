@@ -1,0 +1,10 @@
+server:
+  port: 9200
+  
+  
+ 
+mystoken: '' #微信接入的token
+
+api_key: '' #百度文字识别appkey
+secret_key: '' #百度文字识别secretkey
+app_id: '' #百度文字识别appid
